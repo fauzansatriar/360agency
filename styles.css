@@ -952,7 +952,8 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== Footer ===== */
 .footer {
   padding: var(--spacing-xl) 0 var(--spacing-lg);
-  border-top: 1px solid var(--border-gray);
+  background: #1E1E1E;
+  color: var(--white);
 }
 
 .footer .container {
@@ -979,7 +980,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-desc {
   font-size: 0.85rem;
-  color: var(--medium-gray);
+  color: rgba(255,255,255,0.6);
   line-height: 1.7;
 }
 
@@ -992,21 +993,21 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-size: 0.85rem;
   font-weight: 500;
-  color: var(--medium-gray);
+  color: rgba(255,255,255,0.6);
   transition: color var(--transition);
 }
 
 .footer-links a:hover {
-  color: var(--charcoal);
+  color: var(--white);
 }
 
 .footer-contact {
   font-size: 0.85rem;
-  color: var(--medium-gray);
+  color: rgba(255,255,255,0.6);
 }
 
 .footer-contact a {
-  color: var(--charcoal);
+  color: var(--white);
   font-weight: 500;
 }
 
@@ -1014,9 +1015,9 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   padding-top: var(--spacing-lg);
   margin-top: var(--spacing-lg);
-  border-top: 1px solid var(--border-gray);
+  border-top: 1px solid rgba(255,255,255,0.1);
   font-size: 0.8rem;
-  color: var(--soft-gray);
+  color: rgba(255,255,255,0.4);
 }
 
 /* ===== Responsive ===== */
