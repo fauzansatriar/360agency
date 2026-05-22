@@ -100,10 +100,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-logo {
-  font-family: var(--font-heading);
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--charcoal);
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
 }
 
 .navbar-logo span {
@@ -1005,18 +1009,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-logo {
-  font-family: var(--font-heading);
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--charcoal);
   margin-bottom: var(--spacing-xs);
 }
 
-.footer-logo span {
-  font-size: 0.7rem;
-  font-weight: 400;
-  color: var(--medium-gray);
-  margin-left: 4px;
+.footer-logo-img {
+  height: 32px;
+  width: auto;
+  display: block;
 }
 
 .footer-desc {
