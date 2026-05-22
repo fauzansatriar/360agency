@@ -352,7 +352,7 @@
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
 
@@ -437,6 +437,57 @@
   font-size: 0.85rem;
   color: var(--color-medium-gray);
   line-height: 1.6;
+}
+
+.portfolio-card-embed {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  background: var(--color-charcoal);
+}
+
+.portfolio-card-embed iframe {
+  width: 200%;
+  height: 200%;
+  transform: scale(0.5);
+  transform-origin: top left;
+  border: none;
+  pointer-events: none;
+}
+
+.portfolio-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(30, 30, 30, 0.8) 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
+
+.portfolio-card:hover .portfolio-card-overlay {
+  opacity: 1;
+}
+
+.portfolio-card-visit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+}
+
+.portfolio-card-visit svg {
+  width: 16px;
+  height: 16px;
+}
+
+.portfolio-card-domain {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--color-white);
 }
 
 /* ===== Social Media Section ===== */
@@ -727,10 +778,6 @@
 
 /* ===== Responsive ===== */
 @media (max-width: 1024px) {
-  .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .clients-grid {
     grid-template-columns: repeat(3, 1fr);
   }
