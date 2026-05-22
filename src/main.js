@@ -173,6 +173,36 @@ if (portfolioCards.length) {
   });
 }
 
+// ===== Social Media section header =====
+gsap.from('.social-media .section-header', {
+  scrollTrigger: {
+    trigger: '.social-media .section-header',
+    start: 'top 80%',
+    toggleActions: 'play none none none',
+  },
+  opacity: 0,
+  y: 40,
+  duration: 0.8,
+  ease: 'power2.out',
+});
+
+// ===== Social Media cards stagger animation =====
+const socialCards = gsap.utils.toArray('.social-card');
+if (socialCards.length) {
+  gsap.from(socialCards, {
+    scrollTrigger: {
+      trigger: '.social-grid',
+      start: 'top 80%',
+      toggleActions: 'play none none none',
+    },
+    opacity: 0,
+    y: 60,
+    duration: 0.7,
+    stagger: 0.12,
+    ease: 'power2.out',
+  });
+}
+
 // ===== Clients section header =====
 gsap.from('.clients .section-header', {
   scrollTrigger: {
