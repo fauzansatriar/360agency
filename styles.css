@@ -906,39 +906,62 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== Clients Section ===== */
 .clients {
   padding: var(--spacing-xl) 0 var(--spacing-xxl);
+  overflow: hidden;
 }
 
-.clients-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: var(--spacing-md);
-  align-items: center;
+.clients-marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: var(--spacing-lg) 0;
 }
 
-.client-logo {
+.clients-marquee::before,
+.clients-marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.clients-marquee::before {
+  left: 0;
+  background: linear-gradient(to right, var(--light-bg), transparent);
+}
+
+.clients-marquee::after {
+  right: 0;
+  background: linear-gradient(to left, var(--light-bg), transparent);
+}
+
+.clients-marquee-track {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: var(--spacing-md) var(--spacing-sm);
-  background: var(--white);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-gray);
-  min-height: 100px;
-  transition: transform var(--transition), box-shadow var(--transition);
+  gap: 60px;
+  width: max-content;
+  animation: clientsScroll 30s linear infinite;
 }
 
-.client-logo:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-sm);
+.clients-marquee-track img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.7;
+  filter: grayscale(100%);
+  transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
-.client-logo span {
-  font-family: var(--font-heading);
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--soft-gray);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+.clients-marquee-track img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+@keyframes clientsScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* ===== Contact Section ===== */
