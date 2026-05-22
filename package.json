@@ -1,6 +1,20 @@
 {
   "name": "360agency",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "360 Agency by JDN - Creative & Digital Execution",
-  "private": true
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5",
+    "tailwindcss": "^4.1.8",
+    "@tailwindcss/vite": "^4.1.8"
+  },
+  "dependencies": {
+    "gsap": "^3.12.7"
+  }
 }
