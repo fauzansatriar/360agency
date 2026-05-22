@@ -768,11 +768,10 @@ h1, h2, h3, h4, h5, h6 {
   border-color: rgba(255,255,255,0.4);
 }
 
-/* ===== Portfolio: Social Media (Light Horizontal Scroll) ===== */
+/* ===== Portfolio: Social Media (Light Centered Grid) ===== */
 .portfolio-social-section {
   padding: var(--spacing-xxl) 0;
   background: var(--light-bg);
-  overflow: hidden;
 }
 
 .portfolio-social-top {
@@ -780,7 +779,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: flex-end;
   justify-content: space-between;
   gap: var(--spacing-lg);
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
   flex-wrap: wrap;
 }
 
@@ -827,28 +826,16 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: var(--shadow-sm);
 }
 
-/* Horizontal Scroll */
-.portfolio-social-scroll {
-  padding: 0 var(--spacing-md);
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
-
-.portfolio-social-scroll::-webkit-scrollbar {
-  display: none;
-}
-
-.portfolio-social-scroll-track {
-  display: flex;
+/* Centered Grid */
+.portfolio-social-centered-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-md);
-  padding-bottom: var(--spacing-sm);
-  width: max-content;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.portfolio-social-scroll-card {
-  width: 380px;
-  flex-shrink: 0;
+.portfolio-social-centered-card {
   background: var(--white);
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -857,47 +844,29 @@ h1, h2, h3, h4, h5, h6 {
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
-.portfolio-social-scroll-card:hover {
+.portfolio-social-centered-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
 }
 
-.portfolio-social-scroll-card-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 18px;
+.portfolio-social-centered-card-header {
+  padding: 14px 20px;
   border-bottom: 1px solid var(--border-gray);
-  background: rgba(0,0,0,0.02);
 }
 
-.pssc-avatar {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: var(--charcoal);
-  color: var(--white);
+.pscc-username {
   font-family: var(--font-heading);
-  font-size: 0.6rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.portfolio-social-scroll-card-header span {
-  font-family: var(--font-heading);
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 600;
   color: var(--charcoal);
 }
 
-.portfolio-social-scroll-card-embed {
+.portfolio-social-centered-card-embed {
   height: 520px;
   overflow: hidden;
 }
 
-.portfolio-social-scroll-card-embed iframe {
+.portfolio-social-centered-card-embed iframe {
   width: 100%;
   height: 100%;
   border: none;
@@ -1205,6 +1174,10 @@ h1, h2, h3, h4, h5, h6 {
   .portfolio-social-top {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .portfolio-social-centered-grid {
+    grid-template-columns: 1fr;
   }
 
   .clients-grid {
